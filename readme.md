@@ -1,4 +1,4 @@
-# docker-php74-alpine
+# php80-alpine
 
 ## Why Alpine?
 
@@ -16,14 +16,14 @@ This is a custom build based on PHP 7.4's alpine docker image, with changes to m
 
 ## Where can I find it?
 
-You can find the image on Docker Hub here: https://hub.docker.com/r/nicoverbruggen/php74-alpine.
+You can find the image on Docker Hub here: https://hub.docker.com/r/nicoverbruggen/php80-alpine.
 
 ## GitLab CI
 
 For example, if you are running GitLab, you can use `.gitlab-ci` on your custom GitLab instance:
 
 ```
-image: nicoverbruggen/php74-alpine:latest
+image: nicoverbruggen/php80-alpine:latest
 
 cache:
   paths:
@@ -52,17 +52,17 @@ A few notes:
 
 Use the Dockerfile, customize it as desired and build it!
 
-    docker build -t nicoverbruggen/php74-alpine . && docker push nicoverbruggen/php74-alpine
+    docker build -t nicoverbruggen/php80-alpine . && docker push nicoverbruggen/php80-alpine
 
 If you want to tag the current version (let's say... `1.0`) based on the latest version you just pushed:
 
-    docker image tag nicoverbruggen/php74-alpine:latest nicoverbruggen/php74:1.0
-    docker push nicoverbruggen/php74-alpine:1.0
+    docker image tag nicoverbruggen/php80-alpine:latest nicoverbruggen/php80:1.0
+    docker push nicoverbruggen/php80-alpine:1.0
 
 Anyone can run it afterwards:
 
-    docker run nicoverbruggen/php74-alpine
+    docker run nicoverbruggen/php80-alpine
 
 You can also attach to the container with shell:
 
-    docker run -it nicoverbruggen/php74-alpine sh
+    docker run -it nicoverbruggen/php80-alpine sh
