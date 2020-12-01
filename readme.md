@@ -12,7 +12,7 @@ To run and get interactive terminal: `docker run -it tagname sh`
 
 ## What is this?
 
-This is a custom build based on PHP 7.4's alpine docker image, with changes to make Laravel back-end testing easily possible.
+This is a custom build based on PHP 8.0's alpine docker image, with changes to make Laravel back-end testing easily possible.
 
 ## Where can I find it?
 
