@@ -2,7 +2,7 @@ FROM php:8.0-alpine
 
 # Install PHP modules and clean up
 RUN apk add --no-cache $PHPIZE_DEPS \
-	imagemagick-dev icu-dev zlib-dev libpng-dev libzip-dev; \
+	imagemagick-dev icu-dev zlib-dev jpeg-dev libpng-dev libzip-dev; \
 	docker-php-ext-install intl pcntl gd exif zip; \
     pecl install xdebug; \
     docker-php-ext-enable xdebug; \
