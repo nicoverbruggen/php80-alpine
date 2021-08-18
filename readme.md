@@ -10,7 +10,7 @@ To build: `docker build .`
 To build and tag: `docker build -t tagname .`
 To run and get interactive terminal: `docker run -it tagname sh`
 
-To build for x86 specifically on M1: `docker buildx build . --platform linux/amd64 -t nicoverbruggen/php80-alpine`. (You could then push that to Docker Hub if you need x86 support.)
+
 
 ## What is this?
 
@@ -52,9 +52,19 @@ A few notes:
 
 ## How can I build this myself?
 
+### Building on Apple Silicon *for* amd64/x86
+
+To build for x86 specifically on Apple Silicon: 
+
+    docker buildx build . --platform linux/amd64 -t nicoverbruggen/php80-alpine
+
+### Building for your current architecture
+
 Use the Dockerfile, customize it as desired and build it!
 
     docker build -t nicoverbruggen/php80-alpine . && docker push nicoverbruggen/php80-alpine
+  
+You could then push that to Docker Hub if you need x86 support. (You can also use `--push` with `buildx`!)
 
 If you want to tag the current version (let's say... `1.0`) based on the latest version you just pushed:
 
