@@ -10,6 +10,8 @@ To build: `docker build .`
 To build and tag: `docker build -t tagname .`
 To run and get interactive terminal: `docker run -it tagname sh`
 
+To build for x86 specifically on M1: `docker buildx build . --platform linux/amd64 -t nicoverbruggen/php80-alpine`. (You could then push that to Docker Hub if you need x86 support.)
+
 ## What is this?
 
 This is a custom build based on PHP 8.0's alpine docker image, with changes to make Laravel back-end testing easily possible.
