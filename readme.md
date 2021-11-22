@@ -6,11 +6,9 @@ Using Alpine results in a much smaller Docker image!
 
 ## Quick start
 
-To build: `docker build .`
-To build and tag: `docker build -t tagname .`
-To run and get interactive terminal: `docker run -it tagname sh`
-
-
+* To build: `docker build .`
+* To build and tag: `docker build -t tagname .`
+* To run and get interactive terminal: `docker run -it tagname sh`
 
 ## What is this?
 
@@ -52,7 +50,36 @@ A few notes:
 
 ## How can I build this myself?
 
+### Building on Arch Linux
+
+Make sure that `docker` is installed:
+
+    sudo pacman -Syy
+    sudo pacman -S docker
+
+Make sure the `docker` service is running:
+
+    systemctl start docker.service
+
+Make the build:
+
+    sudo docker build -t nicoverbruggen/php80-alpine .
+
+Test the build:
+
+    sudo docker run -it nicoverbruggen/php80-alpine sh
+
+Make sure you're signed in to Docker Hub:
+
+    sudo docker login
+
+Push the build:
+
+    sudo docker push nicoverbruggen/php80-alpine
+
 ### Building on Apple Silicon *for* amd64/x86
+
+**This is quite slow since emulation is used.**
 
 To build for x86 specifically on Apple Silicon: 
 
